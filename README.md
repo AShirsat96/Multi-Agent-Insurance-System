@@ -1,54 +1,77 @@
-# Building an Intelligent Multi-Agent Insurance Support System with LangGraph and RAG
+# Multi-Agent Insurance Support System
 
-![Multi-Agent System Architecture](https://img.shields.io/badge/AI-Multi--Agent%20System-blue) ![Python](https://img.shields.io/badge/Python-3.10%2B-green) ![LangGraph](https://img.shields.io/badge/LangGraph-Orchestration-orange)
+**An intelligent, multi-agent conversational AI system built with LangGraph to automate insurance support workflows.**
 
-Read full Medium Article Here: [Agentic AI Project: Build a multi-agent system with LangGraph](https://medium.com/towards-artificial-intelligence/agentic-ai-project-build-a-multi-agent-system-with-langgraph-and-open-ai-344ab768caac)
+This project implements a sophisticated agentic architecture designed to handle customer inquiries, process claims documentation, and interact with a structured database, all while maintaining conversation context and agent state.
 
 ## Overview
 
-This project walks through an end-to-end insurance support copilot that combines LangGraph, Retrieval-Augmented Generation (RAG), and structured data to resolve customer requests. The companion notebook (`multi-agent system.ipynb`) shows how to stand up the data stack, orchestrate specialized agents, and observe every hop with Phoenix tracing.
+Moving beyond simple LLM chatbots, this system utilizes **LangGraph** to define a stateful, multi-agent workflow. It decomposes complex support tasks into specialized agents (e.g., Triage, Claims Analysis, Billing, Database Query) that collaborate to resolve user issues effectively.
 
-## What’s New in the Notebook
+## Key Features
 
-- **Phoenix-powered observability**: every agent function is wrapped with an OpenTelemetry span so you can replay decisions inside Arize Phoenix.
-- **Clarification-aware supervisor**: the router uses OpenAI function calling to request missing context before delegating work.
-- **Final answer agent**: conversations end with a summarizer that rewrites the last specialist message into a customer-ready response.
-- **Guard rails for infinite loops**: the supervisor escalates to a human after three failed routing attempts.
-- **Notebook testing**: This insurance support system demonstrates these principles in action, handling complex queries through intelligent routing, context management, and specialized processing.
+* **Multi-Agent Orchestration:** Uses a Supervisor-Agent pattern to route tasks efficiently to specialized sub-agents.
+* **Stateful Conversations:** Leverages LangGraph to maintain context across multi-turn interactions.
+* **RAG & Database Integration:** Uses ChromaDB for policy lookups and SQLite for structured data querying.
+* **Guard rails for infinite loops:** The supervisor logic includes escalation protocols to prevent routing errors.
+* **Modular Design:** Specialized agents (Billing, Claims, General Help) can be updated or added independently.
 
-The future of customer support isn't a single AI assistant—it's a **team** of specialized AI agents working together seamlessly.
+## Workflow Architecture
+
+The system uses a Supervisor-Agent pattern to route tasks efficiently.
+
+## Tech Stack
+
+* **Language:** Python
+* **Orchestration:** LangGraph (LangChain)
+* **AI/LLM:** OpenAI
+* **Database:** SQLite & ChromaDB
+
+## Project Structure
+
+```text
+multi-agent-system/
+├── multi-agent_system_no_phoenix.ipynb  # Main multi-agent system
+├── requirements.txt                     # Python dependencies
+├── enhanced_workflow.mmd                # Mermaid workflow diagram
+├── chroma_db/                           # Vector database storage
+├── insurance_support.db                 # SQLite database
+└── README.md
+
+```
+
+## Setup & Installation
+
+1. **Clone the repository:**
+```bash
+git clone https://github.com/AShirsat96/Multi-Agent-Insurance-System.git
+cd Multi-Agent-Insurance-System
+
+```
+
+
+2. **Install dependencies:**
+```bash
+pip install -r requirements.txt
+
+```
+
+
+3. **Configure environment variables:**
+Create a `.env` file in the root directory (do not commit this file!):
+```env
+OPENAI_API_KEY=your_key_here
+
+```
+
+
 
 ---
 
-## Contact & Resources
-
-- **Repository**: [github.com/alphaiterations/multi-agent-system](https://github.com/alphaiterations/multi-agent-system)
-- **LangGraph Docs**: [langchain-ai.github.io/langgraph](https://langchain-ai.github.io/langgraph/)
-- **ChromaDB**: [docs.trychroma.com](https://docs.trychroma.com/)
-
----
-
-## License
+## 📄 License
 
 This project is open-source and available under the MIT License.
 
 ---
 
 *Built with ❤️ using LangGraph, OpenAI, and ChromaDB*
-
----
-
-## Appendix: Project Structure
-
-```text
-multi-agent-system/
-├── agnetic-rag.ipynb              # RAG implementation notebook
-├── multi-agent system.ipynb       # Main multi-agent system
-├── requirements.txt               # Python dependencies
-├── enhanced_workflow.mmd          # Mermaid workflow diagram
-├── chroma_db/                     # Vector database storage
-│   ├── chroma.sqlite3
-│   └── 13cdf4c1-7894-4026-9ea8-46a4482514e0/
-├── insurance_support.db           # SQLite database
-├── insurance_agent.log            # Agent execution logs
-└── README.md
