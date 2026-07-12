@@ -1,6 +1,6 @@
-# Multi-Agent Insurance Support System
+# Intelligent Multi-Agent Insurance Support System
 
-An enterprise-inspired AI application that simulates a multi-agent customer support workflow for the insurance industry using Large Language Models (LLMs).
+An enterprise-grade AI application that simulates a multi-agent customer support workflow for the insurance industry using Large Language Models (LLMs).
 
 The system leverages **LangGraph** to coordinate specialized AI agents, **OpenAI GPT** for intelligent responses, **ChromaDB** for semantic retrieval, **SQLite** for structured customer and policy information, and **Chainlit** to provide an interactive conversational interface.
 
