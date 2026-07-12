@@ -5,7 +5,7 @@ Traditional customer service chatbots frustrate users with canned responses, whi
 The system leverages **LangGraph** to coordinate specialized AI agents, **OpenAI GPT** for intelligent responses, **ChromaDB** for semantic retrieval, **SQLite** for structured customer and policy information, and **Chainlit** to provide an interactive conversational interface.
 
 
-# 🎯 Value Proposition
+# Value Proposition
 In high-volume customer service operations, routine queries—like policy checks, premium due dates, and claim status checks—consume up to **70% of support resources**. Standard chatbots fall short because they cannot pull live transactions, while raw LLMs present major compliance risks due to financial hallucinations.
 
 This project introduces an **Intelligent Agentic Mesh** that:
