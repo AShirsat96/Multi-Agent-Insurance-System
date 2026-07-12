@@ -4,7 +4,15 @@ An enterprise-inspired AI application that simulates a multi-agent customer supp
 
 The system leverages **LangGraph** to coordinate specialized AI agents, **OpenAI GPT** for intelligent responses, **ChromaDB** for semantic retrieval, **SQLite** for structured customer and policy information, and **Chainlit** to provide an interactive conversational interface.
 
----
+
+# 🎯 Value Proposition
+In high-volume customer service operations, routine queries—like policy checks, premium due dates, and claim status checks—consume up to **70% of support resources**. Standard chatbots fall short because they cannot pull live transactions, while raw LLMs present major compliance risks due to financial hallucinations.
+
+This project introduces an **Intelligent Agentic Mesh** that:
+*   **Deflects Core Ticket Volumes**: Automatically handles structured lookup transactions and FAQs.
+*   **Ensures Zero Hallucinations**: Grounded in SQLite schemas to retrieve exact billing and claim records.
+*   **Reduces Average Handling Time**: Resolves common user issues in seconds with dynamic, multi-desk routing.
+*   **Improves Operational Auditability**: Traced via OpenTelemetry to ensure security boundaries and response quality.
 
 # Project Overview
 
