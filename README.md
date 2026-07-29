@@ -1,18 +1,22 @@
 # Intelligent Multi-Agent Insurance Support System
 
-Traditional customer service chatbots frustrate users with canned responses, while raw LLMs pose massive liability risks due to hallucinations in policy coverage and billing. This enterprise-grade AI application -  **Intelligent Multi-Agent Support System** solves this by establishing a LangGraph-orchestrated network of specialized agents.
+Traditional customer service chatbots frustrate users with canned responses, while raw LLMs pose massive liability risks due to hallucinations in policy coverage and billing. This enterprise-grade AI application — **Intelligent Multi-Agent Support System** — solves this by establishing a LangGraph-orchestrated network of specialized agents.
 
 The system leverages **LangGraph** to coordinate specialized AI agents, **OpenAI GPT** for intelligent responses, **ChromaDB** for semantic retrieval, **SQLite** for structured customer and policy information, and **Chainlit** to provide an interactive conversational interface.
 
+---
 
 # Value Proposition
-In high-volume customer service operations, routine queries—like policy checks, premium due dates, and claim status checks—consume up to **70% of support resources**. Standard chatbots fall short because they cannot pull live transactions, while raw LLMs present major compliance risks due to financial hallucinations.
+
+In high-volume customer service operations, routine queries — like policy checks, premium due dates, and claim status checks — consume up to **70% of support resources**. Standard chatbots fall short because they cannot pull live transactions, while raw LLMs present major compliance risks due to financial hallucinations.
 
 This project introduces an **Intelligent Agentic Mesh** that:
 *   **Deflects Core Ticket Volumes**: Automatically handles structured lookup transactions and FAQs.
 *   **Ensures Zero Hallucinations**: Grounded in SQLite schemas to retrieve exact billing and claim records.
 *   **Reduces Average Handling Time**: Resolves common user issues in seconds with dynamic, multi-desk routing.
-*   **Improves Operational Auditability**: Traced via OpenTelemetry to ensure security boundaries and response quality.
+*   **Improves Operational Auditability**: Traced via a persistent logging framework (`insurance_agent.log`) to capture supervisor routing decisions and response quality.
+
+---
 
 # Project Overview
 
@@ -21,6 +25,22 @@ Insurance companies receive a wide range of customer enquiries, including policy
 This project demonstrates how a **Multi-Agent AI architecture** can automate customer support by intelligently routing requests to specialized AI agents while maintaining conversational context.
 
 The goal was to build a modular AI assistant capable of handling realistic insurance support workflows using modern Agentic AI techniques.
+
+---
+
+# System Architecture
+
+The diagram below illustrates how user queries flow through the Supervisor Agent and are routed to the appropriate specialist agents, data stores, and safety systems.
+
+<!-- 
+  SETUP INSTRUCTIONS:
+  1. Copy the file `insurance_agent_architecture.jpg` into your repository root folder.
+  2. Push it to GitHub.
+  3. Replace the src URL below with the actual GitHub raw image URL, e.g.:
+     https://github.com/AShirsat96/Multi-Agent-Insurance-System/raw/main/insurance_agent_architecture.jpg
+-->
+
+<img alt="Multi-Agent Insurance System Architecture" src="https://github.com/AShirsat96/Multi-Agent-Insurance-System/raw/main/insurance_agent_architecture.jpg" />
 
 ---
 
@@ -106,7 +126,6 @@ The assistant answers general insurance-related questions using the LLM together
 
 <img width="1812" height="487" alt="general_insurance_question" src="https://github.com/user-attachments/assets/666b5db4-1998-41e8-a778-ce6cc1e8f3c0" />
 
-
 ---
 
 ## Billing Information Lookup
@@ -114,7 +133,6 @@ The assistant answers general insurance-related questions using the LLM together
 The Billing Agent retrieves premium information before generating a natural language response.
 
 <img width="1827" height="412" alt="billing_query" src="https://github.com/user-attachments/assets/638b4cf0-24e7-4bba-9e83-0e2132ba1ca1" />
-
 
 ---
 
@@ -124,7 +142,6 @@ When a customer requests assistance from a human representative, the system dete
 
 <img width="1826" height="297" alt="human_escalation" src="https://github.com/user-attachments/assets/e30c3b57-accd-44cc-89ac-fd352cdf3dab" />
 
-
 ---
 
 ## Payment History Retrieval
@@ -132,7 +149,6 @@ When a customer requests assistance from a human representative, the system dete
 The Billing Agent retrieves recent payment history and outstanding balances before generating a conversational response.
 
 <img width="1827" height="522" alt="payment_history" src="https://github.com/user-attachments/assets/86fafb84-27f8-4cd2-bd12-3310074ddadd" />
-
 
 ---
 
@@ -145,6 +161,7 @@ Multi-Agent-Insurance-System/
 ├── requirements.txt
 ├── .gitignore
 ├── LICENSE
+├── insurance_agent_architecture.jpg
 ├── multi_agent_insurance_support.ipynb
 ├── general_insurance_question.jpg
 ├── billing_query.jpg
@@ -227,3 +244,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ---
 
 *Built with ❤️ using LangGraph, OpenAI, and ChromaDB*
+
