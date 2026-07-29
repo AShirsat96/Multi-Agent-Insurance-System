@@ -32,15 +32,8 @@ The goal was to build a modular AI assistant capable of handling realistic insur
 
 The diagram below illustrates how user queries flow through the Supervisor Agent and are routed to the appropriate specialist agents, data stores, and safety systems.
 
-<!-- 
-  SETUP INSTRUCTIONS:
-  1. Copy the file `insurance_agent_architecture.jpg` into your repository root folder.
-  2. Push it to GitHub.
-  3. Replace the src URL below with the actual GitHub raw image URL, e.g.:
-     https://github.com/AShirsat96/Multi-Agent-Insurance-System/raw/main/insurance_agent_architecture.jpg
--->
 
-<img alt="Multi-Agent Insurance System Architecture" src="https://github.com/AShirsat96/Multi-Agent-Insurance-System/raw/main/insurance_agent_architecture.jpg" />
+<img alt="Multi-Agent Insurance System Architecture" src="insurance_agent_architecture_diagram.jpg" />
 
 ---
 
